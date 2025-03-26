@@ -1,4 +1,5 @@
 import multiprocessing
+from os import path, makedirs
 
 # Function to process a chunk of lines
 def process_lines(lines):
@@ -55,6 +56,9 @@ def write_output(output_data, output_file):
 
 # Main function
 def main():
+	if not path.exists('OUTPUT'):
+		makedirs('OUTPUT')
+
 	file_name = 'PCCF_FCCP_V2212_2021.txt'
 	output_file = "OUTPUT/output.csv"
 	
